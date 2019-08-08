@@ -21,9 +21,17 @@
 投稿者名:<span th:text="${article.name}">名前</span><br>
 投稿内容:<span th:text="${article.content}">名前</span><br>
 <button>記事削除</button><br>
-<hr>
+<div th:each="comment : ${commentList}" th:if="${article.id == comment.articleId}">
+コメントID:<span th:text="${comment.id}">id</span><br>
+コメント者名:<span th:text="${comment.name}">名前</span><br>
+コメント内容:<span th:text="${comment.content}">名前</span><br><br>
+</div>
 <form action="articleContent.html" method="post"
-      th:action="@{/article/comment}" th:object="${commentForm}">
+      th:action="@{/article/insertComment}" th:object="${commentForm}">
+名前:<input type="text" name="name" th:field="*{name}"><br>
+コメント:<input type="text" name="content" th:field="*{content}"><br>
+<button type="submit">コメント投稿</button>
+ <hr>
 </form>
 </div>
 
