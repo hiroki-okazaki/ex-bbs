@@ -25,4 +25,7 @@ public class articleService {
 		List<Article> articleList = articleRepository.findAll();
 		return articleList;
 	}
+	public void deleteById(int id) {
+		articleRepository.deleteById(id);
+	}
 }

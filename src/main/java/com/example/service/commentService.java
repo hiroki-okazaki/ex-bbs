@@ -24,4 +24,8 @@ public class commentService {
 		List<Comment> commentList = commentRepository.findAll();
 		return commentList;
 	}
+	
+	public void deleteByArticleId(int id) {
+		commentRepository.deleteByArticleId(id);
+	}
 }
