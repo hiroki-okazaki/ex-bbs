@@ -61,6 +61,7 @@ public class articleController {
 		
 		comment.setName(form.getName());
 		comment.setContent(form.getContent());
+		comment.setArticleId(Integer.parseInt(form.getArticleId()));
 		
 		commentService.insert(comment);
 		return "redirect:/article/articleList";

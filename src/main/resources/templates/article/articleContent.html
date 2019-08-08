@@ -29,7 +29,8 @@
 <form action="articleContent.html" method="post"
       th:action="@{/article/insertComment}" th:object="${commentForm}">
 名前:<input type="text" name="name" th:field="*{name}"><br>
-コメント:<input type="text" name="content" th:field="*{content}"><br>
+コメント:<input type="text" name="content" th:field="*{content}" ><br>
+        <input type="hidden" name="articleId" th:value="${article.id}">
 <button type="submit">コメント投稿</button>
  <hr>
 </form>
